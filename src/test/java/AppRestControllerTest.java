@@ -38,6 +38,14 @@ public class AppRestControllerTest {
     }
 
 
+    /*Тесты должны запускаться при сборке проекта через
+    maven, если тесты не пройдены - сборка должна зафейлится*/
+//    @Test
+//    public void mavenPackageFailureTest()  {
+//        Assert.fail();
+//    }
+
+
     /*Пример 1
     {
         “words”: [

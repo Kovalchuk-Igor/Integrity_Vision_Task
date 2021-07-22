@@ -12,11 +12,10 @@ public class AppRestController {
 
     @PostMapping(value = "/words")
     public WordsList wordGame(@RequestBody WordsList JsonWords){
-        WordsList words = JsonWords;
         int count = 0;
         String lastLetter = "";
 
-        for(String word : words.getWords()){
+        for(String word : JsonWords.getWords()){
             word = word.trim();
             if(!word.isEmpty()){
                 if(count == 0){
@@ -32,10 +31,10 @@ public class AppRestController {
         }
         String[] correctWords = new String[count];
         for(int i = 0; i < count; i++){
-            correctWords[i] = words.getWords()[i];
+            correctWords[i] = JsonWords.getWords()[i];
         }
-        words.setWords(correctWords);
-        return words;
+        JsonWords.setWords(correctWords);
+        return JsonWords;
     }
 
 
